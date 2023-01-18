@@ -3,7 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.2"
 
-
+gem 'dotenv-rails', groups: [:development, :test]
+touch .env
+echo '.env*' >> .gitignore
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 
@@ -67,7 +69,11 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem 'dotenv-rails', groups: [:development, :test]
+
+  # Gemfile
+#gem 'cloudinary', '~> 1.16.0'
+# .env
+#CLOUDINARY_URL=cloudinary://298522699261255:Qa1ZfO4syfbOC-***********************8
 end
 
 gem 'rspec-rails', group: [ :test ]
